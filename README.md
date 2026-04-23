@@ -1,36 +1,29 @@
-🚀 AI Customer Support Assistant (RAG + LLM + Voice)
+🚀 AI Customer Support Assistant
+📌 Project Description
 
-An end-to-end AI-powered customer support system that combines Retrieval-Augmented Generation (RAG) with LLM intelligence and human escalation to deliver fast, accurate, and reliable responses.
+An end-to-end AI-powered customer support system that uses RAG (Retrieval-Augmented Generation) and LLM integration to deliver fast, accurate, and context-aware responses, with support for human escalation.
 
-📌 Overview
-
-This project is designed to solve the limitations of traditional support systems by combining:
-
-⚡ Fast AI responses
-🧠 Context-aware answers using real data
-👨‍💻 Human support when required
-🧠 Key Features
-✅ RAG-based Architecture (Retrieval + Generation)
-✅ LLM Integration via Groq API
-✅ Voice Interaction (Speech Recognition)
-✅ Smart Query Routing
-AI Response
-Instant Reply
-Human Escalation
-✅ Admin Dashboard
-Upload/Delete Documents
-Monitor User Queries
-View Chat History
-Track Analytics
-✅ Vector Database (ChromaDB)
+🎯 Objective
+Automate customer support using AI
+Improve response accuracy using real data
+Provide fallback to human support when needed
 ⚙️ Tech Stack
 Backend: FastAPI
 Frontend: HTML, CSS, JavaScript
 AI/LLM: Groq API
-Database: ChromaDB (Vector DB)
-Architecture: RAG (Retrieval-Augmented Generation)
+Database: ChromaDB (Vector Database)
+Architecture: RAG
 Voice: Browser Speech Recognition
-🔄 How It Works
+🧠 System Architecture
+User Query
+   ↓
+Intent Detection
+   ↓
+Routing System
+   ├── Knowledge Path (RAG + LLM)
+   ├── Simple Reply (Predefined)
+   └── Escalation (Admin Panel)
+🔄 Workflow
 1. Ingestion Flow
 Upload documents (PDF/TXT)
 Split into chunks
@@ -38,54 +31,59 @@ Convert into embeddings
 Store in vector database
 2. Query Flow
 User sends query
-Intent detection
+Detect intent
 Retrieve relevant chunks
-LLM generates response
-Escalate to human if needed
-📊 System Architecture
-User → Query → Intent Detection → Routing
-                      ↓
-        ┌─────────────┼─────────────┐
-        ↓             ↓             ↓
-   Knowledge      Simple Reply   Escalation
-      ↓               ↓             ↓
-   RAG + LLM     Predefined     Admin Panel
-      ↓                               ↓
-   Response                        Human Reply
-📂 Project Structure (Example)
-├── backend/
-├── frontend/
-├── admin-panel/
-├── data/
-├── main.py
-├── requirements.txt
+Generate response using LLM
+Escalate if required
+✨ Features
+RAG-based response generation
+Smart query routing
+Voice-enabled interaction
+Admin dashboard
+Chat history tracking
+Human-in-the-loop escalation
+📊 Admin Panel
+Upload/Delete documents
+View user queries
+Monitor AI responses
+Track sessions and analytics
+Handle escalation tickets
+📂 Project Structure
+project-root/
+│
+├── backend/              # FastAPI backend
+├── frontend/             # User interface
+├── admin-panel/          # Admin dashboard
+├── data/                 # Uploaded documents
+├── main.py               # Entry point
+├── requirements.txt      # Dependencies
 └── README.md
-🚀 Getting Started
-1. Clone the repo
-git clone https://github.com/your-username/customer-support-assistance-RAG.git
+🚀 Installation & Setup
+1. Clone Repository
+git clone https://github.com/ranc5291-dotcom/customer-support-assistance-RAG.git
 cd customer-support-assistance-RAG
-2. Create virtual environment
+2. Create Virtual Environment
 python -m venv venv
-venv\Scripts\activate   # Windows
-3. Install dependencies
+venv\Scripts\activate
+3. Install Dependencies
 pip install -r requirements.txt
-4. Add Environment Variables
+4. Setup Environment Variables
 
-Create a .env file:
+Create .env file:
 
 GROQ_API_KEY=your_api_key_here
-5. Run the server
+5. Run Application
 uvicorn main:app --reload
 🎯 Use Cases
 Customer support automation
-FAQ assistants
-Knowledge-based chatbots
-Internal company assistants
-🔐 Security Note
-API keys are stored using environment variables
-Sensitive data is not exposed in the repository
-📌 Future Improvements
-Multi-language support 🌍
-Better UI/UX
-Advanced analytics dashboard
-Integration with messaging platforms
+AI chatbots
+Knowledge base assistants
+Internal helpdesk systems
+🔐 Security
+API keys stored using environment variables
+Sensitive data not exposed in repository
+🚧 Future Improvements
+Multi-language support
+UI enhancements
+Advanced analytics
+Third-party integrations
